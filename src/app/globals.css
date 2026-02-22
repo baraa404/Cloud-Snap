@@ -1,0 +1,532 @@
+@import "tailwindcss";
+
+
+/* ===========================
+   NEO-BRUTALISM DESIGN SYSTEM
+   CloudSnap
+=========================== */
+
+:root {
+  --yellow: #FFE500;
+  --lime: #AAFF00;
+  --black: #0a0a0a;
+  --white: #ffffff;
+  --surface: #F5F0E8;
+  --surface2: #EDE8DF;
+  --red: #FF3535;
+  --blue: #0055FF;
+  --border: 3px solid var(--black);
+  --shadow: 4px 4px 0 var(--black);
+  --shadow-lg: 6px 6px 0 var(--black);
+  --shadow-sm: 2px 2px 0 var(--black);
+  --radius: 0px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--surface);
+  color: var(--black);
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===========================
+   TYPOGRAPHY
+=========================== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.mono {
+  font-family: 'Space Mono', monospace;
+}
+
+/* ===========================
+   BRUTAL CARD
+=========================== */
+.brutal-card {
+  background: var(--white);
+  border: var(--border);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  transition: box-shadow 0.1s ease, transform 0.1s ease;
+}
+
+.brutal-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translate(-1px, -1px);
+}
+
+.brutal-card-yellow {
+  background: var(--yellow);
+  border: var(--border);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+}
+
+.brutal-card-black {
+  background: var(--black);
+  color: var(--white);
+  border: var(--border);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+.brutal-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  background: var(--yellow);
+  color: var(--black);
+  border: var(--border);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  padding: 0.625rem 1.25rem;
+  cursor: pointer;
+  transition: box-shadow 0.1s ease, transform 0.1s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.brutal-btn:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translate(-2px, -2px);
+}
+
+.brutal-btn:active {
+  box-shadow: none;
+  transform: translate(4px, 4px);
+}
+
+.brutal-btn-black {
+  background: var(--black);
+  color: var(--white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  border: var(--border);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  padding: 0.625rem 1.25rem;
+  cursor: pointer;
+  transition: box-shadow 0.1s ease, transform 0.1s ease, background 0.1s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.brutal-btn-black:hover {
+  background: var(--yellow);
+  color: var(--black);
+  box-shadow: var(--shadow-lg);
+  transform: translate(-2px, -2px);
+}
+
+.brutal-btn-black:active {
+  box-shadow: none;
+  transform: translate(4px, 4px);
+}
+
+.brutal-btn-white {
+  background: var(--white);
+  color: var(--black);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  border: var(--border);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  padding: 0.625rem 1.25rem;
+  cursor: pointer;
+  transition: box-shadow 0.1s ease, transform 0.1s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.brutal-btn-white:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translate(-2px, -2px);
+  background: var(--lime);
+}
+
+.brutal-btn-white:active {
+  box-shadow: none;
+  transform: translate(4px, 4px);
+}
+
+.brutal-btn-red {
+  background: var(--red);
+  color: var(--white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  border: var(--border);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  padding: 0.625rem 1.25rem;
+  cursor: pointer;
+  transition: box-shadow 0.1s ease, transform 0.1s ease;
+  text-decoration: none;
+}
+
+.brutal-btn-red:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translate(-2px, -2px);
+}
+
+.brutal-btn-red:active {
+  box-shadow: none;
+  transform: translate(4px, 4px);
+}
+
+.brutal-btn-sm {
+  padding: 0.375rem 0.75rem;
+  font-size: 0.75rem;
+}
+
+.brutal-btn-lg {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+}
+
+/* ===========================
+   INPUTS
+=========================== */
+.brutal-input {
+  width: 100%;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  background: var(--white);
+  border: var(--border);
+  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius);
+  color: var(--black);
+  padding: 0.75rem 1rem;
+  transition: box-shadow 0.1s ease, transform 0.1s ease;
+  outline: none;
+}
+
+.brutal-input:focus {
+  box-shadow: 4px 4px 0 var(--yellow);
+  transform: translate(-1px, -1px);
+}
+
+.brutal-input::placeholder {
+  color: #999;
+  font-weight: 400;
+}
+
+/* ===========================
+   BADGES
+=========================== */
+.brutal-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 2px solid var(--black);
+  padding: 2px 8px;
+}
+
+.brutal-badge-yellow {
+  background: var(--yellow);
+  color: var(--black);
+}
+
+.brutal-badge-lime {
+  background: var(--lime);
+  color: var(--black);
+}
+
+.brutal-badge-black {
+  background: var(--black);
+  color: var(--white);
+}
+
+.brutal-badge-red {
+  background: var(--red);
+  color: var(--white);
+}
+
+.brutal-badge-blue {
+  background: var(--blue);
+  color: var(--white);
+}
+
+.brutal-badge-white {
+  background: var(--white);
+  color: var(--black);
+}
+
+/* ===========================
+   CODE BLOCKS
+=========================== */
+.brutal-code {
+  background: var(--black);
+  color: var(--lime);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.8rem;
+  border: var(--border);
+  overflow-x: auto;
+}
+
+.brutal-code-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #1a1a1a;
+  border-bottom: 3px solid var(--black);
+  padding: 0.625rem 1rem;
+}
+
+/* ===========================
+   DROP ZONE
+=========================== */
+.brutal-dropzone {
+  border: 3px dashed var(--black);
+  background: var(--surface);
+  transition: all 0.1s ease;
+  cursor: pointer;
+}
+
+.brutal-dropzone:hover,
+.brutal-dropzone.dragging {
+  background: var(--yellow);
+  border-style: solid;
+  box-shadow: var(--shadow-lg);
+  transform: translate(-2px, -2px);
+}
+
+/* ===========================
+   SECTION HEADER
+=========================== */
+.brutal-section-header {
+  display: inline-block;
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 800;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  margin-bottom: 1rem;
+}
+
+/* ===========================
+   DIVIDER
+=========================== */
+.brutal-divider {
+  border: none;
+  border-top: 3px solid var(--black);
+  margin: 0;
+}
+
+/* ===========================
+   NAV
+=========================== */
+.brutal-nav {
+  background: var(--black);
+  border-bottom: 3px solid var(--black);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* ===========================
+   SCROLLBAR
+=========================== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--black);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #333;
+}
+
+/* ===========================
+   ANIMATIONS
+=========================== */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  20%,
+  60% {
+    transform: translateX(-6px);
+  }
+
+  40%,
+  80% {
+    transform: translateX(6px);
+  }
+}
+
+.fade-up {
+  animation: fadeUp 0.25s ease forwards;
+}
+
+.shake {
+  animation: shake 0.4s ease;
+}
+
+/* ===========================
+   PROGRESS BAR
+=========================== */
+.brutal-progress-track {
+  width: 100%;
+  height: 16px;
+  background: var(--surface);
+  border: 3px solid var(--black);
+}
+
+.brutal-progress-fill {
+  height: 100%;
+  background: var(--yellow);
+  transition: width 0.3s ease;
+}
+
+/* ===========================
+   TABLE
+=========================== */
+.brutal-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.8rem;
+}
+
+.brutal-table th {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  background: var(--black);
+  color: var(--white);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+}
+
+.brutal-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 2px solid var(--black);
+  vertical-align: top;
+}
+
+.brutal-table tr:last-child td {
+  border-bottom: none;
+}
+
+.brutal-table-wrap {
+  border: var(--border);
+  overflow: hidden;
+}
+
+/* ===========================
+   TABS
+=========================== */
+.brutal-tabs {
+  display: flex;
+  border-bottom: 3px solid var(--black);
+  background: var(--surface2);
+}
+
+.brutal-tab {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-right: 3px solid var(--black);
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.1s ease;
+}
+
+.brutal-tab:hover {
+  background: var(--yellow);
+}
+
+.brutal-tab.active {
+  background: var(--yellow);
+}
+
+.brutal-tab:last-child {
+  border-right: none;
+}
