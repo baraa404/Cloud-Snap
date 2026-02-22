@@ -21,7 +21,7 @@ export default function APIDocumentation() {
   -F "github_owner=your-username" \\
   -F "github_repo=your-repo" \\
   -F "github_branch=main" \\
-  -F "folder=uploads" \\
+  -F "folder=default" \\
   https://your-domain/api/public-upload`,
 
         js: `const formData = new FormData();
@@ -30,7 +30,7 @@ formData.append('github_token', 'ghp_xxxxxxxxxxxx');
 formData.append('github_owner', 'your-username');
 formData.append('github_repo', 'your-repo');
 formData.append('github_branch', 'main');
-formData.append('folder', 'uploads');
+formData.append('folder', 'default');
 
 const response = await fetch('/api/public-upload', {
   method: 'POST',
@@ -50,7 +50,7 @@ with open('/path/to/image.png', 'rb') as f:
         'github_owner': 'your-username',
         'github_repo': 'your-repo',
         'github_branch': 'main',
-        'folder': 'uploads'
+        'folder': 'default'
     }
     response = requests.post(
         'https://your-domain/api/public-upload',
@@ -64,14 +64,14 @@ with open('/path/to/image.png', 'rb') as f:
     const exampleResponse = `{
   "success": true,
   "filename": "image-1703123456789.png",
-  "url": "https://cdn.jsdelivr.net/gh/user/repo@abc123/uploads/image.png",
+  "url": "https://cdn.jsdelivr.net/gh/user/repo@abc123/default/image.png",
   "urls": {
-    "github": "https://github.com/user/repo/blob/main/uploads/image.png",
-    "raw": "https://raw.githubusercontent.com/user/repo/main/uploads/image.png",
-    "jsdelivr": "https://cdn.jsdelivr.net/gh/user/repo@main/uploads/image.png",
-    "github_commit": "https://github.com/user/repo/blob/abc123/uploads/image.png",
-    "raw_commit": "https://raw.githubusercontent.com/user/repo/abc123/uploads/image.png",
-    "jsdelivr_commit": "https://cdn.jsdelivr.net/gh/user/repo@abc123/uploads/image.png"
+    "github": "https://github.com/user/repo/blob/main/default/image.png",
+    "raw": "https://raw.githubusercontent.com/user/repo/main/default/image.png",
+    "jsdelivr": "https://cdn.jsdelivr.net/gh/user/repo@main/default/image.png",
+    "github_commit": "https://github.com/user/repo/blob/abc123/default/image.png",
+    "raw_commit": "https://raw.githubusercontent.com/user/repo/abc123/default/image.png",
+    "jsdelivr_commit": "https://cdn.jsdelivr.net/gh/user/repo@abc123/default/image.png"
   },
   "size": 142857,
   "type": "image/png",
@@ -289,7 +289,7 @@ with open('/path/to/image.png', 'rb') as f:
                                         <ParamRow name="github_owner" type="string" required desc="GitHub username or organization" />
                                         <ParamRow name="github_repo" type="string" required desc="Repository name" />
                                         <ParamRow name="github_branch" type="string" required={false} desc="Branch (default: main)" />
-                                        <ParamRow name="folder" type="string" required={false} desc="Upload folder path (default: uploads)" />
+                                        <ParamRow name="folder" type="string" required={false} desc="Upload folder path (default: default)" />
                                         <ParamRow name="custom_filename" type="string" required={false} desc="Custom filename without extension" />
                                     </tbody>
                                 </table>

@@ -8,7 +8,7 @@ export async function POST(request: NextRequest) {
         const formData = await request.formData();
         const file = formData.get('file') as File;
         const customFilename = formData.get('custom_filename') as string | null;
-        const folder = (formData.get('folder') as string) || 'uploads';
+        const folder = (formData.get('folder') as string) || 'default';
 
         if (!file) {
             return NextResponse.json(
@@ -49,16 +49,17 @@ export async function POST(request: NextRequest) {
         // Generate unique filename
         const extension = file.name.split('.').pop() || 'jpg';
         const cleanFolder = folder.replace(/^\/+|\/+$/g, '').replace(/[^a-zA-Z0-9_\/-]/g, '-'); // Sanitize folder
+        const destinationFolder = `src/assets/${cleanFolder}`;
         let filename: string;
 
         if (customFilename) {
             // Use custom filename, sanitize it
             const sanitized = customFilename.replace(/[^a-zA-Z0-9_-]/g, '-');
-            filename = `${cleanFolder}/${sanitized}.${extension}`;
+            filename = `${destinationFolder}/${sanitized}.${extension}`;
         } else {
             // Generate automatic filename
             const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-            filename = `${cleanFolder}/${timestamp}-${Math.random().toString(36).substr(2, 9)}.${extension}`;
+            filename = `${destinationFolder}/${timestamp}-${Math.random().toString(36).substr(2, 9)}.${extension}`;
         }
 
         // Upload to GitHub

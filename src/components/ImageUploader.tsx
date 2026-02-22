@@ -44,7 +44,7 @@ export default function ImageUploader({ onUpload }: ImageUploaderProps = {}) {
     const [error, setError] = useState<string | null>(null);
     const [selectedFiles, setSelectedFiles] = useState<SelectedFile[]>([]);
     const [copiedUrl, setCopiedUrl] = useState<string | null>(null);
-    const [currentFolder, setCurrentFolder] = useState<string>('uploads');
+    const [currentFolder, setCurrentFolder] = useState<string>('default');
     const [repoFolders, setRepoFolders] = useState<string[]>([]);
     const [foldersLoading, setFoldersLoading] = useState(false);
 
@@ -68,9 +68,9 @@ export default function ImageUploader({ onUpload }: ImageUploaderProps = {}) {
         setFoldersLoading(true);
         try {
             const folders = await fetchFolderPaths('', 2);
-            const unique = Array.from(new Set(['uploads', ...folders])).sort();
+            const unique = Array.from(new Set(['default', ...folders])).sort();
             setRepoFolders(unique);
-            if (!unique.includes(currentFolder)) setCurrentFolder('uploads');
+            if (!unique.includes(currentFolder)) setCurrentFolder('default');
         } catch { /* silent */ }
         finally { setFoldersLoading(false); }
     }, [currentFolder, fetchFolderPaths]);
@@ -85,7 +85,7 @@ export default function ImageUploader({ onUpload }: ImageUploaderProps = {}) {
             const baseName = trimmed.replace(/\.[^/.]+$/, '');
             if (baseName) formData.append('custom_filename', baseName);
         }
-        formData.append('folder', currentFolder || 'uploads');
+        formData.append('folder', currentFolder || 'default');
         const response = await fetch('/api/upload', { method: 'POST', body: formData });
         return response.json();
     }, [currentFolder]);

@@ -6,7 +6,8 @@ export const runtime = "edge";
 export async function GET(request: NextRequest) {
     try {
         const { searchParams } = new URL(request.url);
-        const path = searchParams.get('path') || '';
+        const reqPath = searchParams.get('path') || '';
+        const path = reqPath ? `src/assets/${reqPath}` : 'src/assets';
 
         const owner = process.env.GITHUB_OWNER!;
         const repo = process.env.GITHUB_REPO!;
@@ -16,13 +17,21 @@ export async function GET(request: NextRequest) {
             auth: process.env.GITHUB_TOKEN,
         });
 
-        // Get contents of the specified path
-        const response = await octokit.repos.getContent({
-            owner,
-            repo,
-            path,
-            ref: branch,
-        });
+        let response;
+        try {
+            // Get contents of the specified path
+            response = await octokit.repos.getContent({
+                owner,
+                repo,
+                path,
+                ref: branch,
+            });
+        } catch (error: any) {
+            if (error.status === 404) {
+                return NextResponse.json({ success: true, items: [], path: reqPath });
+            }
+            throw error;
+        }
 
         // Helper to get commit SHA for a file
         async function getCommitSha(filePath: string): Promise<string | null> {
@@ -42,11 +51,12 @@ export async function GET(request: NextRequest) {
         if (Array.isArray(response.data)) {
             // Only fetch commit SHAs for files (not folders)
             const items = await Promise.all(response.data.map(async item => {
+                const cleanPath = item.path.replace(/^src\/assets\//, '');
                 if (item.type === 'file') {
                     const commitSha = await getCommitSha(item.path);
                     return {
                         name: item.name,
-                        path: item.path,
+                        path: cleanPath,
                         type: item.type,
                         size: item.size,
                         sha: item.sha,
@@ -59,7 +69,7 @@ export async function GET(request: NextRequest) {
                 } else {
                     return {
                         name: item.name,
-                        path: item.path,
+                        path: cleanPath,
                         type: item.type,
                         size: item.size,
                         sha: item.sha,
@@ -71,18 +81,19 @@ export async function GET(request: NextRequest) {
             return NextResponse.json({
                 success: true,
                 items,
-                path,
+                path: reqPath,
             });
         } else {
             let commitSha = null;
             if (response.data.type === 'file') {
                 commitSha = await getCommitSha(response.data.path);
             }
+            const cleanPath = response.data.path.replace(/^src\/assets\//, '');
             return NextResponse.json({
                 success: true,
                 items: [{
                     name: response.data.name,
-                    path: response.data.path,
+                    path: cleanPath,
                     type: response.data.type,
                     size: response.data.size,
                     sha: response.data.sha,
@@ -92,7 +103,7 @@ export async function GET(request: NextRequest) {
                     jsdelivr_url: commitSha ? `https://cdn.jsdelivr.net/gh/${owner}/${repo}@${commitSha}/${response.data.path}` : '',
                     raw_url: commitSha ? `https://raw.githubusercontent.com/${owner}/${repo}/${commitSha}/${response.data.path}` : '',
                 }],
-                path,
+                path: reqPath,
             });
         }
     } catch (error) {

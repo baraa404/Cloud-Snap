@@ -65,7 +65,8 @@ export async function DELETE(request: NextRequest) {
             auth: process.env.GITHUB_TOKEN,
         });
 
-        await deletePath(octokit, owner, repo, branch, cleanPath);
+        const realPath = `src/assets/${cleanPath}`;
+        await deletePath(octokit, owner, repo, branch, realPath);
 
         return NextResponse.json({
             success: true,

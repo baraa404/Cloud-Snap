@@ -21,6 +21,7 @@ export async function POST(request: NextRequest) {
                 { status: 400 }
             );
         }
+        const realPath = `src/assets/${cleanPath}`;
 
         const owner = process.env.GITHUB_OWNER!;
         const repo = process.env.GITHUB_REPO!;
@@ -31,7 +32,7 @@ export async function POST(request: NextRequest) {
         });
 
         // Create a placeholder file to ensure the folder exists in GitHub
-        const placeholderPath = `${cleanPath}/.gitkeep`;
+        const placeholderPath = `${realPath}/.gitkeep`;
         const content = Buffer.from('\n').toString('base64');
 
         await octokit.repos.createOrUpdateFileContents({

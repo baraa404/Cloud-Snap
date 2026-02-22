@@ -22,12 +22,14 @@ export async function DELETE(request: NextRequest) {
             auth: process.env.GITHUB_TOKEN,
         });
 
+        const realPath = `src/assets/${path}`;
+
         // Delete the file from GitHub
         await octokit.repos.deleteFile({
             owner,
             repo,
-            path,
-            message: `Delete file: ${path}`,
+            path: realPath,
+            message: `Delete file: ${realPath}`,
             sha,
             branch,
         });
