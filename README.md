@@ -1,5 +1,8 @@
 # ⚡ CloudSnap
 
+![Screenshot 1](screenshots/1.png)
+![Screenshot 2](screenshots/2.png)
+
 > **Upload anything. Get a CDN URL. In seconds.**
 
 Drop an image or video → it hits your GitHub repo → jsDelivr serves it from 100+ edge nodes worldwide. **The URL works forever.** Even if the file gets deleted.
