@@ -25,7 +25,7 @@ export default function Home() {
             <span className="mono" style={{ color: '#666', fontSize: '0.65rem', letterSpacing: '0.1em', textTransform: 'uppercase', marginLeft: '4px' }}>v2</span>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <a href="https://github.com/baraa404/Colud-Snap" target="_blank" rel="noopener noreferrer"
+            <a href="https://github.com/baraa404/Cloud-Snap" target="_blank" rel="noopener noreferrer"
               style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#aaa', textDecoration: 'none', fontFamily: 'Space Mono, monospace', fontSize: '0.7rem', padding: '0.4rem 0.75rem', border: '2px solid #333' }}>
               <Github size={13} /> GitHub
             </a>

@@ -7,7 +7,7 @@
 
 Drop an image or video → it hits your GitHub repo → jsDelivr serves it from 100+ edge nodes worldwide. **The URL works forever.** Even if the file gets deleted.
 
-**Made by [baraa404](https://github.com/baraa404)** · [github.com/baraa404/Colud-Snap](https://github.com/baraa404/Colud-Snap)
+**Made by [baraa404](https://github.com/baraa404)** · [github.com/baraa404/Cloud-Snap](https://github.com/baraa404/Cloud-Snap)
 
 ---
 
@@ -81,7 +81,7 @@ github.com/.../blob/main/file        ← GitHub page, dynamic
 
 ## Deploy in 5 minutes (Cloudflare Pages)
 
-1. Fork [this repo](https://github.com/baraa404/Colud-Snap)
+1. Fork [this repo](https://github.com/baraa404/Cloud-Snap)
 2. Cloudflare Dashboard → Workers & Pages → Create → Pages → Connect to Git
 3. Build settings: `npm run build` · output: `.next` · add `NODE_VERSION=18`
 4. Set these 6 env vars:
@@ -104,8 +104,8 @@ github.com/.../blob/main/file        ← GitHub page, dynamic
 ## Run locally
 
 ```bash
-git clone https://github.com/baraa404/Colud-Snap
-cd Colud-Snap
+git clone https://github.com/baraa404/Cloud-Snap
+cd Cloud-Snap
 npm install
 
 # Create .env.local with the 6 vars above

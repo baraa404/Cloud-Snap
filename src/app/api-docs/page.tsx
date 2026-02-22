@@ -131,7 +131,7 @@ with open('/path/to/image.png', 'rb') as f:
                         <span className="mono" style={{ fontSize: '0.8rem', letterSpacing: '0.05em' }}>← CLOUDSNAP</span>
                     </Link>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                        <a href="https://github.com/baraa404/Colud-Snap" target="_blank" rel="noopener noreferrer"
+                        <a href="https://github.com/baraa404/Cloud-Snap" target="_blank" rel="noopener noreferrer"
                             style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#aaa', textDecoration: 'none', fontFamily: 'Space Mono, monospace', fontSize: '0.7rem' }}>
                             <Github size={14} /> baraa404
                         </a>
@@ -151,7 +151,7 @@ with open('/path/to/image.png', 'rb') as f:
                     <p className="mono" style={{ fontSize: '0.875rem', maxWidth: '500px', lineHeight: 1.7 }}>
                         Upload images & videos to GitHub repos and get permanent CDN URLs via jsDelivr. Provide your own GitHub token — nothing is stored server-side.
                     </p>
-                    <a href="https://github.com/baraa404/Colud-Snap" target="_blank" rel="noopener noreferrer" className="brutal-btn-black" style={{ marginTop: '1.5rem', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+                    <a href="https://github.com/baraa404/Cloud-Snap" target="_blank" rel="noopener noreferrer" className="brutal-btn-black" style={{ marginTop: '1.5rem', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
                         <Github size={14} /> VIEW ON GITHUB
                     </a>
                 </div>
@@ -214,7 +214,7 @@ with open('/path/to/image.png', 'rb') as f:
                 <Section title="STEP 2 — DEPLOY TO CLOUDFLARE PAGES" badge="HOSTING">
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                         {[
-                            { n: '01', title: 'Fork the CloudSnap repository', body: 'Fork https://github.com/baraa404/Colud-Snap to your GitHub account.' },
+                            { n: '01', title: 'Fork the CloudSnap repository', body: 'Fork https://github.com/baraa404/Cloud-Snap to your GitHub account.' },
                             { n: '02', title: 'Create a Cloudflare Pages project', body: 'Cloudflare Dashboard → Workers & Pages → Create application → Pages → Connect to Git → Select your fork.' },
                             { n: '03', title: 'Build configuration', body: 'Build command: npm run build\nBuild output directory: .next\nNode version: 18 (set NODE_VERSION=18 in env vars)' },
                             { n: '04', title: 'Set all 6 environment variables', body: 'Go to Settings → Environment Variables and add all 6 secrets:' },
@@ -368,9 +368,9 @@ with open('/path/to/image.png', 'rb') as f:
                         <div style={{ width: 28, height: 28, background: 'var(--yellow)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: '0.75rem' }}>CS</div>
                         <span style={{ color: 'var(--white)', fontWeight: 800 }}>CLOUDSNAP</span>
                     </Link>
-                    <a href="https://github.com/baraa404/Colud-Snap" target="_blank" rel="noopener noreferrer"
+                    <a href="https://github.com/baraa404/Cloud-Snap" target="_blank" rel="noopener noreferrer"
                         style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#666', textDecoration: 'none', fontFamily: 'Space Mono, monospace', fontSize: '0.7rem' }}>
-                        <Github size={13} /> baraa404/Colud-Snap
+                        <Github size={13} /> baraa404/Cloud-Snap
                     </a>
                     <p className="mono" style={{ color: '#444', fontSize: '0.7rem' }}>CLOUDSNAP © 2026 · MADE BY BARAA</p>
                 </div>
