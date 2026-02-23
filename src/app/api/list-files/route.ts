@@ -26,8 +26,9 @@ export async function GET(request: NextRequest) {
                 path,
                 ref: branch,
             });
-        } catch (error: any) {
-            if (error.status === 404) {
+        } catch (error) {
+            const err = error as Error & { status?: number };
+            if (err.status === 404) {
                 return NextResponse.json({ success: true, items: [], path: reqPath });
             }
             throw error;
