@@ -1,8 +1,6 @@
 # ⚡ CloudSnap
 
-<div align="center">
-  **English** · **[العربية](README.ar.md)**
-</div>
+**English** · **[العربية](README.ar.md)**
 
 ![Screenshot 1](screenshots/1.png)
 ![Screenshot 2](screenshots/2.png)
